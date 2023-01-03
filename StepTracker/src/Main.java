@@ -2,15 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        StepTracker a = new StepTracker(scanner);
-        System.out.println("Добро пожаловать! Вы как всегда хороши!");
+        Scanner scanner = new Scanner(System.in);                               //Создание класса Scanner
+        StepTracker a = new StepTracker();                                      //Создание класса StepTracker
+        System.out.println("Добро пожаловать! Вы как всегда хороши!");          //Запуск меню
         printMenu(scanner);
         System.out.println("Хорошего дня!");
     }
 
 
-    public static void printMenu(Scanner scanner) {
+    public static void printMenu(Scanner scanner) {                             //Метод который печатает меню и в который вводятся данные
         while (true) {
             System.out.println("Выберите действие:");
             System.out.println("1 - Добавить колличество шагов за день.");
@@ -35,7 +35,7 @@ public class Main {
                 int mouthNumber = scanner.nextInt();
                 StepTracker.printStatistic(mouthNumber);
             }
-    else if(command == 0) {
+    else if(command == 0) {                                            // Выход из программы
     break;
         }
     else {

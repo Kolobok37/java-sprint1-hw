@@ -1,18 +1,15 @@
-import java.util.Scanner;
-
 public class StepTracker {
-    static MonthData[] monthToData = new MonthData[12];
-    static int goalByStepsPerDay = 10000;
-    String[] monthName = {"Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"};
-    StepTracker(Scanner scan) {
+    static MonthData[] monthToData = new MonthData[12];                                                     //Создание массива классов MonthDate
+    static int goalByStepsPerDay = 10000;                                                                   //Цель по умолчанию
+    String[] monthName = {"январь", "февраль", "март", "апрель", "май", "июнь", "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"};          //Названия месяцев
+    StepTracker() {                                                                                         //Конструктор класса
 
         for (int i = 0; i < 12; i++) {
             monthToData[i] = new MonthData();
             monthToData[i].monthName = monthName[i];
         }
     }
-    static  void addNewNumberStepsPerDay(int monthNumber,int dayNumber,int stepQuantity) {
-        // ввод и проверка номера месяца
+    static  void addNewNumberStepsPerDay(int monthNumber,int dayNumber,int stepQuantity) {                  // ввод и проверка данных за день
             if ( monthNumber >= 12 ||monthNumber < 0) {
                 System.out.println("Введён неправильный номер месяца");
                 return;
@@ -32,7 +29,7 @@ public class StepTracker {
         }
         monthToData[monthNumber].days[dayNumber-1]=stepQuantity;
         }
-    static void changeStepGoal(int goalByStepsPerDay){
+    static void changeStepGoal(int goalByStepsPerDay){                                                        //Установка новой цели
         if(goalByStepsPerDay<=0){
             System.out.println("Введено неправильное колличество шагов");
             return;
@@ -40,7 +37,7 @@ public class StepTracker {
         StepTracker.goalByStepsPerDay=goalByStepsPerDay;
         System.out.println("Новая цель шагов: "+goalByStepsPerDay+ "! Вперёд!");
     }
-    static void printStatistic(int numberMonth){
+    static void printStatistic(int numberMonth){                                                              //Печать статистики
         System.out.println("Статистика за " + monthToData[numberMonth].monthName + ": ");
         monthToData[numberMonth].printDaysAndStepsFromMonth();
         System.out.println("Общее колличество шагов за месяц: " + monthToData[numberMonth].sumStepsFromMonth());
