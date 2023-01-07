@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);   //Создание классов Scanner, StepTracker и Main
+        Scanner scanner = new Scanner(System.in);   //Создание классов Scanner, StepTracker
         StepTracker stepObject = new StepTracker();
         System.out.println("Добро пожаловать! Вы как всегда хороши!");  //Запуск меню
         printMenu(scanner, stepObject);
