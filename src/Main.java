@@ -15,13 +15,9 @@ public class Main {
             if (command == 1) {
                 stepObject.addNewNumberStepsPerDay(scanner); //Добавление и проверка шагов
             } else if (command ==2) {
-                System.out.println("Введите новую цель шагов: ");
-                int goalByStepsPerDay=scanner.nextInt();
-                stepObject.changeStepGoal(goalByStepsPerDay);
+                stepObject.changeStepGoal(scanner); //Установка новой цели
             } else if (command==3) {
-                System.out.println("Введите месяц: ");      //Cтатистика за месяц
-                int mouthNumber = scanner.nextInt();
-                stepObject.printStatistic(mouthNumber);
+                stepObject.printStatistic(scanner); //Вывод статистики
             }
     else if(command == 0) {     // Выход из программы
     break;

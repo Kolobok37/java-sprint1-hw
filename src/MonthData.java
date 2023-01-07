@@ -2,7 +2,7 @@ public class MonthData {
 
         int[] days  = new int[30];      // Массив с информацией шагов за день
         String monthName;       //Имя месяца
-void InputStep(int step,int day){                                                   //Сохранение данных за день
+void inputStep(int step,int day){                                                   //Сохранение данных за день
     days[day] = step;
     }
     void printDaysAndStepsFromMonth(){      //Печать статистика по дням
