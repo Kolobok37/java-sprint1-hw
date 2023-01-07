@@ -4,14 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);   //Создание классов Scanner, StepTracker и Main
         StepTracker stepObject = new StepTracker();
-        Main a = new Main();
         System.out.println("Добро пожаловать! Вы как всегда хороши!");  //Запуск меню
-        a.printMenu(scanner);
+        printMenu(scanner, stepObject);
         System.out.println("Хорошего дня!");
     }
-    public void printMenu(Scanner scanner) {    //Метод который печатает меню и в который вводятся данные
-        StepTracker stepObject = new StepTracker(); //Создание класса StepTracker
-
+    public static void  printMenu(Scanner scanner, StepTracker stepObject) {    //Метод который печатает меню и в который вводятся данные
         while (true) {
             System.out.println("Выберите действие:\n0 -Выход из меню. \n1 - Добавить колличество шагов за день.\n2 - Установить цель.\n3 - Посмотреть статистику за месяц.");
             int command = scanner.nextInt();
