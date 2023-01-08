@@ -36,9 +36,9 @@ public class StepTracker {
         }
         monthToData[monthNumber].days[dayNumber-1]=stepQuantity;        // сохранение данных
         }
-    void changeStepGoal(Scanner scanner){   //Смена цели
+    void changeStepGoal(){   //Смена цели
         System.out.println("Введите новую цель шагов:");
-        int newGoal=scanner.nextInt();//Установка новой цели
+        int newGoal=scan.nextInt();//Установка новой цели
         if(newGoal<=0){   //Проверка введёных данных
             System.out.println("Введено неправильное колличество шагов");
             return;
@@ -46,9 +46,9 @@ public class StepTracker {
         goalByStepsPerDay=newGoal;
         System.out.println("Новая цель шагов: "+goalByStepsPerDay+ "! Вперёд!");
     }
-    void printStatistic(Scanner scanner){   //Cтатистика за месяц
+    void printStatistic(){   //Cтатистика за месяц
         System.out.println("Введите месяц: ");
-        int monthNumber = scanner.nextInt();
+        int monthNumber = scan.nextInt();
         MonthData month = monthToData[monthNumber];
         System.out.println("Статистика за " + month.monthName + ": ");
         month.printDaysAndStepsFromMonth();
@@ -58,7 +58,6 @@ public class StepTracker {
         System.out.println("Пройденная дистанция (в км): " + Converter.convertToKm(month.sumStepsFromMonth()));
         System.out.println("Количество сожжённых килокалорий: " + Converter.convertToKKal(month.sumStepsFromMonth()));
         System.out.println("Лучшая серия выполненой цели по шагам на день: "+month.bestSeries(goalByStepsPerDay));
-        month.days[1]=1;
     }
     }
 
