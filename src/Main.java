@@ -6,7 +6,7 @@ public class Main {
         StepTracker stepObject = new StepTracker(scanner);
         System.out.println("Добро пожаловать! Вы как всегда хороши!");  //Запуск меню
         printMenu(scanner, stepObject);
-        System.out.println("Хорошего дня!");;
+        System.out.println("Хорошего дня!");
     }
     public static void  printMenu(Scanner scanner, StepTracker stepObject) {    //Метод который печатает меню и в который вводятся данные
         while (true) {
